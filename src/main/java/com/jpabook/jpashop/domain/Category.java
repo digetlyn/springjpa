@@ -34,3 +34,6 @@ public class   Category {
     @OneToMany (mappedBy = "parent")
     private List<Category> child = new ArrayList<>();
 }
+
+
+//머지하기
