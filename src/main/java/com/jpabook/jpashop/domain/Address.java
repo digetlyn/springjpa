@@ -13,6 +13,8 @@ public class  Address {
 
     protected Address(){
 
+        // 이슈발행테스트
+
     }
 
     public Address(String city, String street, String zipcode) {
