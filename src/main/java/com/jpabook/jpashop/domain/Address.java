@@ -13,11 +13,15 @@ public class  Address {
 
     protected Address(){
 
+        // 이슈발행테스트
+
     }
 
     public Address(String city, String street, String zipcode) {
         this.city = city;
         this.street = street;
         this.zipcode = zipcode;
+
+        // commit하기
     }
 }
