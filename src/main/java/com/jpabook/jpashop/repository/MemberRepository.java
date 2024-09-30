@@ -12,8 +12,8 @@ import java.util.List;
 @RequiredArgsConstructor
 public class MemberRepository  {
 
-
-    private final EntityManager em;
+    @PersistenceContext
+    private EntityManager em;
 
     public void save(Member member){
         em.persist(member);
@@ -27,11 +27,12 @@ public class MemberRepository  {
 
         return em.createQuery("select m from Member m", Member.class)
                 .getResultList();
+
     }
 
 
     public  List<Member> findName(String name){
-        return em.createQuery("select m from m where m.name = :name", Member.class)
+        return em.createQuery("select m from Member m where m.name = :name", Member.class)
                 .setParameter("name",name)
                 .getResultList();
     }
