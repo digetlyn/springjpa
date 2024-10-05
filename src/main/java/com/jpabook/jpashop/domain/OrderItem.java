@@ -6,6 +6,8 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.security.PublicKey;
+
 import static jakarta.persistence.FetchType.LAZY;
 
 
@@ -33,4 +35,19 @@ public class OrderItem {
 
 
 
+
+        //==   비즈니스 로직==//
+    public void cancel() {
+        getItem().addStock(count);   //취소하고 재고수량 원복
+    }
+
+
+        //== 조회 로직==//
+    /**
+     * 주문상품 전체 가격 조회
+     */
+    /
+    public int getTotalPrice() {
+        return getOrderPrice() * getCount();
+    }
 }
