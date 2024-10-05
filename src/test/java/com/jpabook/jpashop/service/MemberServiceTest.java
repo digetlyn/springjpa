@@ -35,7 +35,6 @@ public class MemberServiceTest {
         Long saveId = memberService.join(member);
 
 
-
         //then
         em.flush();
         assertEquals(member, memberRepository.findOne(saveId));
